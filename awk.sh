@@ -10,15 +10,26 @@ BEGIN {
 
 }
 {
-
+ 
  for (i=1;i<NF;i++){
+
   # 칼럼별 출력
-  print i,￦$(i)
+  print NR,i,￦$(i)
+
   # 단어별 카운트
-  arr[￦$(i)]
+  arr[￦$(i)]++
  }
 }
 END {
-
+ # 정렬후 출력
+ j=1
+ for (i in arr){
+  ind[j]=i
+  j++
+ }
+ n=asort(ind)
+ for (i=1;i<n;i++){
+  print ind[i] , arr[ind[i]]
+ }
 }
 "
