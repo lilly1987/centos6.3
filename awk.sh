@@ -9,6 +9,7 @@ awk "
 BEGIN {
 
 }
+￦$0 "￦!"~ /제외패턴/ {print NR , ￦$0} 
 {
  
  for (i=1;i<NF;i++){
