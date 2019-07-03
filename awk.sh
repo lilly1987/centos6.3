@@ -34,3 +34,25 @@ END {
  }
 }
 "
+
+lst="
+file1
+file2
+file3
+"
+
+
+function f_sp(){
+ find . -path "*tmp*" -name "*name$item*" | xargs grep ".*pt.*"
+}
+
+for item in $lst
+do
+ f_sp "$item"
+done
+
+
+
+
+
+
