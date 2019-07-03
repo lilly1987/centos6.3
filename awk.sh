@@ -43,7 +43,15 @@ file3
 
 
 function f_sp(){
- find . -path "*tmp*" -name "*name$item*" | xargs grep ".*pt.*"
+ find . -path "*tmp*" -name "*name$item*" | xargs grep ".*pt.*" | awk -F'[\\[\\]]' "
+BEGIN {
+ arr[\"val\"]=0
+}
+\$(NF) "\!"~ /val/ { arr[\"val\"]++ }
+END {
+  print \"val\" , arr[\"val\"]
+}
+"
 }
 
 for item in $lst
