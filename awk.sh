@@ -48,6 +48,7 @@ BEGIN {
  arr[\"val\"]=0
 }
 \$(NF) "\!"~ /val/ { arr[\"val\"]++ }
+\$1 ~ /[0-9]/ && \$2 ~ /(2|8)/ {print \$0;}
 END {
   print \"val\" , arr[\"val\"]
 }
