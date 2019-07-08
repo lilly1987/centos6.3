@@ -6,3 +6,5 @@
 watch -n 5 ./perl.pl
 
 print "test￦n";
+
+# 0~9
