@@ -5,6 +5,10 @@ awk '{print $0}' 파일이름
 
 awk -F '"[,:]"' '{print $0}' 파일 이름
 
+#json 분할
+awk -F'"?[￦￦]}][:,][￦￦[{]"?'
+
+
 awk "
 BEGIN {
 
