@@ -1,9 +1,10 @@
 
 i=1
+arr=()
 function f_fun(){
- $1=`echo $2`
+ arr[$((i++))]=`echo $1`
  sleep 10
 }
-f_fun $arr[$((i++))] test
+f_fun test
 
 echo ${arr[*]}
