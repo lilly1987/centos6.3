@@ -1,0 +1,58 @@
+# https://unix.stackexchange.com/questions/129072/whats-the-difference-between-and
+
+
+They aren't the same. $* is a single string, whereas $@ is an actual array. To see the difference, execute the following script like so:
+
+ > ./test.sh one two "three four"
+
+The script:
+
+#!/bin/bash
+
+echo "Using \"\$*\":"
+for a in "$*"; do
+    echo $a;
+done
+
+echo -e "\nUsing \$*:"
+for a in $*; do
+    echo $a;
+done
+
+echo -e "\nUsing \"\$@\":"
+for a in "$@"; do
+    echo $a;
+done
+
+echo -e "\nUsing \$@:"
+for a in $@; do
+    echo $a;
+done              
+
+The four cases are:
+
+Using "$*":
+one two three four
+
+Here, the parameters are regarded as one long quoted string. Unquoted:
+
+Using $*:
+one
+two
+three
+four
+
+The string is broken into words by the for loop.
+
+Using "$@":
+one
+two
+three four
+
+This treats each element of $@ as a quoted string.
+
+Using $@:
+one
+two
+three
+four
