@@ -15,3 +15,9 @@ EOF
    fi
  } &
 done < server.lst
+
+wait `jobs -l | awk '$3 ~ /Running/{print $2}'`
+
+echo "end"
+
+
