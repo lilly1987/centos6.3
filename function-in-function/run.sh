@@ -5,7 +5,7 @@ y7 y6 y5" > test-f_test-no1.lst
 function f_loop(){
  while read line; do
   echo "f_loop : $line"
-  if [[ $line =~ ^#.* ]];
+  if [[ $line =~ ^#.* ]]
   then
    continue;
   else
