@@ -9,7 +9,8 @@ function f_loop(){
   then
    continue;
   else
-   $1 ${line[@]};
+  # $1 ${line[@]};
+   $1 $line
   fi
  done < ./test-$1-$2.lst
 }
