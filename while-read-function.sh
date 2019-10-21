@@ -19,4 +19,5 @@ while read line; do
 
     f_echo "${array[@]}"
 
-done < List.txt
+done < $( ls List.txt )
+# 와일드카드 처리를 위해
