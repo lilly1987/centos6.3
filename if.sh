@@ -13,3 +13,11 @@ Then
 Else
 Echo
 Fi
+
+
+v1=true
+v2=true
+if ! $v1 && ! $v2 ; 
+then
+echo "true"
+fi
