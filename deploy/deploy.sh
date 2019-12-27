@@ -1,5 +1,6 @@
 t_pwd="$(cd "$(dirname "$0")" && pwd)/"
 t_base="$(basename $t_pwd)"
+t_name="test"
 
 while read line ; do
  {
@@ -8,16 +9,16 @@ while read line ; do
   nc -zw1 ${arr[3]} 22 > /dev/null ;
   if [ $? -eq 0 ] ;
   then
-   sftp $${arr[3]} <<EOF # 2> /dev/null
-lcd /home/user/
-cd /home/user/script
+   sftp ${arr[2]}@${arr[3]} <<EOF # 2> /dev/null
+lcd /home/user/$t_base
+cd /home/user/$t_base
 put *.*
 EOF
    else
     echo "can't connet"
    fi
  } &
-done < 
+done < $(ls $t_pwd$t_sub)
 
 wait `jobs -l | awk '$3 ~ /Running/{print $2}'`
 
