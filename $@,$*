@@ -56,3 +56,27 @@ one
 two
 three
 four
+
+
+
+#---------
+
+echo "$*"
+echo "$@"
+echo "$#"
+
+for v_opt in "$@" ;
+do
+echo $v_opt
+done
+
+function f_opt() {
+
+for v_opt in "$@" ;
+do
+echo $v_opt
+done
+
+}
+
+f_opt "$@"
