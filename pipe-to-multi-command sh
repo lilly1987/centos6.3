@@ -11,9 +11,11 @@ est text2
 cest text3
 " | tee >(
  grep "test1" | awk "
+ {print \$0}
 " &
 ) >(
  grep "text" | awk "
+ {print \$0}
 " &
 ) > /dev/null
 
