@@ -1,0 +1,19 @@
+#!/bin/bash
+#bash 필수
+
+echo  "
+test text1
+test text2
+test text3
+
+dest text1
+est text2
+cest text3
+" | tee >(
+ grep "test1" | awk "
+" &
+) >(
+ grep "text" | awk "
+" &
+) > /dev/null
+
