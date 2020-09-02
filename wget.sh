@@ -1,0 +1,2 @@
+su -
+yum install wget
