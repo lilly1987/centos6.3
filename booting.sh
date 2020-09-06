@@ -48,6 +48,21 @@ service $스크립트파일 $명령어
 setvice --status-all
 # service < option > | --status-all | [ service_name [ command | --full-restart ] ]
 
+# 관리자 권한
+shutdown -k 5
+# -r 재부팅 , -c 취소 , -k 경고만
+# 각 프로세스가 종료하도록 TERM 시그널보냄
+
+# 시그널 목록
+kill -l
+
+# 자세한 가이드
+# https://jhnyang.tistory.com/143
+man 7 signal
+
+
+
+
 
 
 
