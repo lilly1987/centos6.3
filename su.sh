@@ -16,3 +16,5 @@ su -c 'echo you'
 # 본인 암호만 필요. 따음표 묵을 필요 없음.
 # 단 /etc/sudoers 에서 누가 어디서 어떤 명령 수행 가능한지 설정 필요
 sudo [-u user] commend
+
+# /etc/sudoers 는 visudo를 사용해 편집하는게 편하다고 함
